@@ -13,3 +13,12 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname + '/../index.html'));
 });
 
+/// Creating post route
+app.post('/', (req, res) => {
+   const crypto = req.body.crypto,
+         fiat = req.body.fiat;
+
+   console.log(crypto, fiat);
+
+});
+
