@@ -1,5 +1,6 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
+      request = require('request'),
       path = require('path'),
       app = express(),
       port = 3000;
@@ -18,7 +19,9 @@ app.post('/', (req, res) => {
    const crypto = req.body.crypto,
          fiat = req.body.fiat;
 
-   console.log(crypto, fiat);
+   request('https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD', (err, res, body) => {
+       console.log(res.body);
+   });
 
 });
 
